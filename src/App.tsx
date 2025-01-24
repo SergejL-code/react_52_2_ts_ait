@@ -1,10 +1,11 @@
 import "./App.css";
-import Counter from "./components/counter/Counter";
+import CarShop from "./components/car/carshop/CarShop";
+//import Counter from "./components/counter/Counter";
 
 function App() {
   return (
     <>
-      <Counter />
+      <CarShop />
     </>
   );
 }
