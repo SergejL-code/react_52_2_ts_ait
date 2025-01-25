@@ -25,14 +25,17 @@ function Playground(): JSX.Element {
 
   // Example 1: пустой массив зависимости
 
-  // useEffect(() => {
-  //     console.log("UseEffect 1- только перед первой отрисовки === mount");
-  //   }, []);
+  useEffect(() => {
+    console.log("UseEffect 1- только перед первой отрисовки === mount");
+  }, []);
+
   // Example 2: без массива зависимостей(вообще)
 
-  // useEffect(() => {
-  //   console.log("UseEffect 2 - при mount(первичной отрисовки) и при любых изменениях");
-  // });
+  useEffect(() => {
+    console.log(
+      "UseEffect 2 - при mount(первичной отрисовки) и при любых изменениях"
+    );
+  });
 
   // Example 3: с указанием зависимостей
 
