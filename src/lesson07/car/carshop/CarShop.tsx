@@ -1,7 +1,6 @@
 import Car from "../Car";
 import Bike from "../../bike/Bike.tsx";
 import stepLogo from "./img/pexels-mikebirdy-120049.jpg";
-import style from "./carshop.module.css";
 function CarShop(): JSX.Element {
   return (
     <div>
@@ -13,7 +12,7 @@ function CarShop(): JSX.Element {
       <Car brand="Lada" color="green" />
       <Car brand="Audi" color="pink" />
       <h1> Первый способ подгрузить изображение через импорт</h1>
-      <div className="merc">
+      <div>
         <img src={stepLogo} alt="" />
       </div>
       <Bike brand="Honda" gear={5} price={5_000} condition={"bad "} />
@@ -21,7 +20,7 @@ function CarShop(): JSX.Element {
       <Bike brand="Harley Davidson" gear={5} price={45_000} condition={"neu"} />
       <Bike brand="Ural" gear={4} price={20_000} />
       <Bike brand="Java" gear={3} price={10_000} />
-      <h1>Второй способ из папки public, без точки перед слеш</h1>{" "}
+      <h1>Второй способ из папки public, без точки перед slash  --/--</h1>{" "}
       <img src="lada_3.jpg" alt="" />
     </div>
   );
