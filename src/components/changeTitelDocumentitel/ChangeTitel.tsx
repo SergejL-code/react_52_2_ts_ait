@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function ChangeTitel(): JSX.Element {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
     document.title = `Счетчик:${count}`;

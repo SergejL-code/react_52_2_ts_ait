@@ -1,0 +1,102 @@
+/* General reset for padding and margin */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container Styling */
+div {
+  background: #fff;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #333;
+}
+
+h3,
+h4 {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #666;
+}
+
+p {
+  font-size: 14px;
+  margin: 6px 0;
+  color: #777;
+}
+
+/* Profile Image Styling */
+.foto img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  border: 2px solid #eee;
+}
+
+/* Button Styling */
+.btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  div {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h3,
+  h4,
+  p {
+    font-size: 14px;
+  }
+  .foto img {
+    width: 80px;
+    height: 80px;
+  }
+}
