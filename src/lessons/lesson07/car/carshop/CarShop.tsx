@@ -1,4 +1,4 @@
-import Car from "../Car";
+import Car from "../Car.tsx";
 import Bike from "../../bike/Bike.tsx";
 import stepLogo from "./img/pexels-mikebirdy-120049.jpg";
 function CarShop(): JSX.Element {
@@ -20,7 +20,7 @@ function CarShop(): JSX.Element {
       <Bike brand="Harley Davidson" gear={5} price={45_000} condition={"neu"} />
       <Bike brand="Ural" gear={4} price={20_000} />
       <Bike brand="Java" gear={3} price={10_000} />
-      <h1>Второй способ из папки public, без точки перед slash  --/--</h1>{" "}
+      <h1>Второй способ из папки public, без точки перед slash --/--</h1>{" "}
       <img src="lada_3.jpg" alt="" />
     </div>
   );

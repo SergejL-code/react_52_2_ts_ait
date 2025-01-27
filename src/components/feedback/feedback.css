@@ -1,0 +1,15 @@
+.card {
+  width: auto;
+  border: 2px solid black;
+  border-radius: 15px;
+  background: url("https://img.freepik.com/premium-vector/blue-steel-countertop-empty-shelf-vector-realistic-mockup_314759-656.jpg?ga=GA1.1.1085263623.1732395758&semt=ais_incoming");
+}
+.countLike {
+  font-size: 30px;
+}
+.countDislike {
+  font-size: 30px;
+}
+.MyButton {
+  width: 130px;
+}

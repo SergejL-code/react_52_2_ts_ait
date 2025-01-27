@@ -40,7 +40,7 @@ console.log(petOfAlex);
 // Можно расширить union
 
 type ExtendedPet = Pet | "snake";
-const myPet: ExtendedPet;
+let myPet: ExtendedPet;
 myPet = "snake";
 console.log(myPet);
 

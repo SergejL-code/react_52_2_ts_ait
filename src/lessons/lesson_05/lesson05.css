@@ -1,0 +1,24 @@
+.heroCard {
+  max-width: 480px;
+  padding: 10px 40px 10px;
+  border: 1px solid;
+  margin: 6px;
+  border-radius: 6px;
+}
+.heroCardImgWrapper {
+  height: 300px;
+  border-radius: 20%;
+  overflow: hidden;
+}
+.heroCardImgWrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.heroCardLight {
+  border: 2px solid blue;
+}
+
+.heroCardDark {
+  border: 2px solid red;
+}
