@@ -1,7 +1,15 @@
-
-
-
-export const fellowship = [
+const fruits: string[] = ["apple", "orange", "pear", "pineapple"];
+// чтобы типизировать массив из обьектов сначала типизируем один экземпляр
+interface IHero {
+  id: number;
+  name: string;
+  age: number;
+  isDark: boolean;
+  weapons: string[];
+  image: string;
+}
+// используя типизацию одного обьекта, типизируем массив через[]
+export const fellowship: IHero[] = [
   {
     id: 1,
     name: "Gendalf",

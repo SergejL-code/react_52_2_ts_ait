@@ -12,12 +12,19 @@
 import "./myButton.css";
 
 interface IMyButtonProps {
-  type: "button" | "submit" | "reset";
-  text: string;
-  func: () => void;
+  // ограничение на конкретное значения
+  type?: "button" | "submit" | "reset";
+  text?: string;
+  //типизация функций в обьекте по ключу
+  // после => указываем возвращенное значение
+  func?: () => void;
 }
-
-function MyButton({ text, func, type }: IMyButtonProps) {
+// в props мы можем передавать значение по-умолчанию в случае если не передали props
+function MyButton({
+  text = "click",
+  func = () => {},
+  type = "submit",
+}: IMyButtonProps) {
   return (
     <button type={type} onClick={func} className="MyButton">
       {text}

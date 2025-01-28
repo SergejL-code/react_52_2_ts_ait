@@ -1,4 +1,15 @@
-function ProfileMapCard({ id, name, age, weapons }) {
+interface IProfileMapCard {
+  id: number;
+  name: string;
+  age: number;
+  weapons: string;
+}
+function ProfileMapCard({
+  id,
+  name,
+  age,
+  weapons,
+}: IProfileMapCard): JSX.Element {
   return (
     <div>
       <div>

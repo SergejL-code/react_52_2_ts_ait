@@ -1,10 +1,15 @@
+import { useEffect } from "react";
 import { fellowship } from "./fellowship";
 import "./lesson05.css";
 function Lesson05() {
-  console.log(fellowship);
+  // этот useEffect с пустым массивом зависимостей сработает один раз при начале жизненного цикла компонента
+  useEffect(() => {
+    console.log("render Lesson 05 !");
+  }, []);
 
   return (
     <div>
+      <h2>React map() components</h2>
       <div>
         {/* не забываем для созданного в итерации элемента использовать key prop в который передаем что-то уникальное от каждого элемента для избежаний возможных ошибок при отрисовке */}
         {fellowship.map((hero) => (
@@ -17,6 +22,7 @@ function Lesson05() {
             >
               <img src={hero.image} alt="" />
             </div>
+
             <p>{hero.age} years old</p>
             <p>{hero.isDark ? "Villan 👹" : "Hero 😇"}</p>
             {/* <p>Weapons {hero.weapons.map(weapon => ' | ' + weapon )}</p> */}

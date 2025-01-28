@@ -1,5 +1,16 @@
 import "./profileCard.css";
-function ProfileCard({ img, name, profession, hobby }) {
+interface IProfileCard {
+  name: string;
+  img: string;
+  profession: string;
+  hobby: string;
+}
+function ProfileCard({
+  img,
+  name,
+  profession,
+  hobby,
+}: IProfileCard): JSX.Element {
   return (
     <div className="card">
       <img className="avatar-img" src={img} alt="" />
