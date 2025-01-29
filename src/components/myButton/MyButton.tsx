@@ -9,8 +9,8 @@
 
 // пример отдельного компонента кнопки
 // экспорт по умолчанию можно писать как в конце так и в начале
-import "./myButton.css";
-
+import styles from "./myButton.module.css";
+import cn from "classnames";
 interface IMyButtonProps {
   // ограничение на конкретное значения
   type?: "button" | "submit" | "reset";
@@ -18,15 +18,31 @@ interface IMyButtonProps {
   //типизация функций в обьекте по ключу
   // после => указываем возвращенное значение
   func?: () => void;
+
+  // активная ли кнопка
+  disabled?: boolean;
+  // варианты цвета для кнопки
+  variant?: "primary" | "danger";
 }
+
 // в props мы можем передавать значение по-умолчанию в случае если не передали props
 function MyButton({
   text = "click",
   func = () => {},
+  disabled = false,
   type = "submit",
+  variant = "primary",
 }: IMyButtonProps) {
   return (
-    <button type={type} onClick={func} className="MyButton">
+    <button
+      type={type}
+      onClick={func}
+      className={cn(styles.myButton, {
+        [styles.primary]: variant === "primary",
+        [styles.danger]: variant === "danger",
+        [styles.disabled]: disabled === true,
+      })}
+    >
       {text}
     </button>
   );
