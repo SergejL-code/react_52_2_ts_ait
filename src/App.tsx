@@ -1,6 +1,8 @@
 import "./App.css";
+import Lesson10 from "./lessons/lesson10/Lesson10";
 //import Homework_08 from "./Homeworks/HM08/variant_1/Homework_08";
-import Lesson09 from "./lessons/lesson09/Lesson09";
+//import Lesson09 from "./lessons/lesson09/Lesson09";
+
 //import Bitcoin from "./konsultation/bitcoin/Bitcoin";
 //import Cocktail from "./konsultation/fetchPraktika/Cocktail";
 //import Homework08 from "./Homework/HM08/Homework08";
@@ -23,7 +25,7 @@ import Lesson09 from "./lessons/lesson09/Lesson09";
 function App() {
   return (
     <>
-      <Lesson09 />
+      <Lesson10 />
     </>
   );
 }
