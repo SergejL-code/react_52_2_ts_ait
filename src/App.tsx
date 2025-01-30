@@ -1,5 +1,7 @@
 import "./App.css";
-import Lesson10 from "./lessons/lesson10/Lesson10";
+//import Lesson10 from "./lessons/lesson10/Lesson10";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import Layout from "./layout/Layout";
 //import Homework_08 from "./Homeworks/HM08/variant_1/Homework_08";
 //import Lesson09 from "./lessons/lesson09/Lesson09";
 
@@ -24,9 +26,11 @@ import Lesson10 from "./lessons/lesson10/Lesson10";
 
 function App() {
   return (
-    <>
-      <Lesson10 />
-    </>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}></Route>
+      </Routes>
+    </HashRouter>
   );
 }
 
