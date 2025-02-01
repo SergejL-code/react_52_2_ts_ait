@@ -6,26 +6,27 @@ function Layout() {
     <>
       <header className={styles.header}>
         <NavLink
-          className={({ isActive }) => (isActive ? styles.likAktive : "")}
+          className={({ isActive }) => (isActive ? styles.linkActive : "")}
           to={"/"}
         >
-          home
+          Home
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) => (isActive ? styles.linkActive : "")}
+          to={"con"}
+        >
+          Consultation
         </NavLink>
         <NavLink
-          className={({ isActive }) => (isActive ? styles.likAktive : "")}
-          to={"fetch-fox"}
+          className={({ isActive }) => (isActive ? styles.linkActive : "")}
+          to={"hm"}
         >
-          fox-api
+          HomeWork
         </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.likAktive : "")}
-          to={"fetch-cat"}
-        >
-          Lesson05
-        </NavLink>
-        {/* <NavLink to={"hero"}>Lesson05</NavLink> */}
       </header>
       <main className={styles.main}>
+        {/* за место компонента Outlet импортированного из React Router будут приходить компоненты из маршрутизации, которую мы описываем в App.tsx */}
         <Outlet />
       </main>
       <footer className={styles.footer}>Footer</footer>
