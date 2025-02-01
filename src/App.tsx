@@ -43,6 +43,7 @@ function App() {
 
           <Route path="con" element={<ConsultationPage />} />
           <Route path="/consul-5" element={<UsersPage />} />
+
           {/* компонент по пути * будет отображаться по всем путям, которые явно не описаны в маршрутизации  */}
           <Route path="*" element={<NoPage />} />
         </Route>

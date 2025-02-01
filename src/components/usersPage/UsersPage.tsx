@@ -6,8 +6,8 @@ interface IUserPage {
   username: string;
   password: string;
   name: {
-    firstName: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
   };
   address: IAddress;
   phone: string;
@@ -28,7 +28,7 @@ function UsersPage(): JSX.Element {
 
   async function loadProfile(): Promise<void> {
     const res = await fetch("https://fakestoreapi.com/users");
-    const obj: IUserPage[] = await res.json();
+    const obj = await res.json();
 
     setProfile(obj);
   }
@@ -42,11 +42,11 @@ function UsersPage(): JSX.Element {
         <li key={user.id} className={styles.profile}>
           <p>Username: {user.username}</p>
           <p>
-            Vorname:{user.name.firstName}
+            Vorname: {user.name.firstname}
             <br />
-            Nachname:{user.name.lastName}
+            Nachname: {user.name.lastname}
           </p>
-          <p>Handy:{user.phone}</p>
+          <p>Handy: {user.phone}</p>
           <p>E-mail: {user.email}</p>
           <p>Postleitzahl: {user.address.zipcode}</p>
         </li>
