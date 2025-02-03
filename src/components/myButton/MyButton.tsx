@@ -11,6 +11,7 @@
 // экспорт по умолчанию можно писать как в конце так и в начале
 import styles from "./myButton.module.css";
 import cn from "classnames";
+
 interface IMyButtonProps {
   // ограничение на конкретное значения
   type?: "button" | "submit" | "reset";

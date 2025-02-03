@@ -16,12 +16,12 @@ function LoginForm() {
         type={"email"}
         name={"email"}
       />
-      <MyInput
+      {/* <MyInput
         label={"secret password"}
         placeholder={"password"}
         type={"password"}
         name={"password"}
-      />
+      /> */}
       <MyButton text={"send form"} type={"submit"} />
     </form>
   );

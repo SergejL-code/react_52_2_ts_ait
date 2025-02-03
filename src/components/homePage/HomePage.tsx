@@ -43,6 +43,9 @@ function HomePage() {
       <Link to="form_gender">
         <div>Gender</div>
       </Link>
+      <Link to="cats">
+        <div>Cats</div>
+      </Link>
     </div>
   );
 }

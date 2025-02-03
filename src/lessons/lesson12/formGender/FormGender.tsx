@@ -9,13 +9,16 @@ interface IFormValues {
 interface IFormData {
   gender: string;
   isMale: boolean;
+  probability: number;
 }
 export default function FormGender(): JSX.Element {
   const [gender, setGender] = useState<string>("");
+  const [probability, setProbability] = useState<number>(0);
   const fetchGender = async (name: string) => {
-    const response = await fetch(`https://api.genderize.io/?name=${name}`);
+    const response = await fetch(`https://api.genderize.io/?name=${name},`);
     const data = await response.json();
     setGender(data.gender);
+    setProbability(data.probability);
   };
   const formik = useFormik({
     initialValues: {
@@ -40,7 +43,13 @@ export default function FormGender(): JSX.Element {
         />
         <MyButton type="submit" text="send data" />
       </form>
-      <h2>{gender === "male" ? "👨" : "👩"}</h2>
+      <div>
+        <h2>
+          <h3>
+            {probability} % ВЫ :{gender === "male" ? "👨" : "👩"}{" "}
+          </h3>
+        </h2>
+      </div>
     </>
   );
 }

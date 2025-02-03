@@ -14,6 +14,7 @@ import ConsultationPage from "./konsultation/ConsultationPage";
 import Lesson12 from "./lessons/lesson12/Lesson12";
 import Lesson11 from "./lessons/lesson11/Lesson11";
 import FormGender from "./lessons/lesson12/formGender/FormGender";
+import Cat from "./components/cat/Cat";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="lesson-11" element={<Lesson11 />} />
           <Route path="lesson-12" element={<Lesson12 />} />
           <Route path="form_gender" element={<FormGender />} />
+          <Route path="cats" element={<Cat />} />
 
           <Route path="con" element={<ConsultationPage />} />
           <Route path="/consul-5" element={<UsersPage />} />

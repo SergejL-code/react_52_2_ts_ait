@@ -38,7 +38,6 @@ function FetchFox(): JSX.Element {
   useEffect(() => {
     // вызываем функцию чуть замедляющую вызов
     handleGetFox();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
