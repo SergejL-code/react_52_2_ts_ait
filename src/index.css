@@ -12,6 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.lesson-container {
+  width: 100%;
+}
 
 * {
   box-sizing: border-box;

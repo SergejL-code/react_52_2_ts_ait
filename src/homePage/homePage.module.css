@@ -1,0 +1,24 @@
+.gridContainer {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 130px;
+}
+/* .lessonsContainer{
+
+    width: 100%
+} */
+.gridContainer div {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(128, 63, 128);
+  color: aliceblue;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.gridContainer div:hover {
+  background-color: blueviolet;
+}

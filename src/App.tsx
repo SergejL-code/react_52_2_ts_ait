@@ -5,16 +5,22 @@ import Layout from "./layout/Layout";
 import Lesson05 from "./lessons/lesson05/Lesson05";
 
 import NoPage from "./components/noPage/NoPage";
-import HomePage from "./components/homePage/HomePage";
+import HomePage from "./homePage/HomePage";
 
 import Lesson04 from "./lessons/lesson04/Lesson04";
 import UsersPage from "./components/usersPage/UsersPage";
 
-import ConsultationPage from "./konsultation/ConsultationPage";
+import ConsultationPage from "./ConsultationsPage/ConsultationPage";
 import Lesson12 from "./lessons/lesson12/Lesson12";
 import Lesson11 from "./lessons/lesson11/Lesson11";
 import FormGender from "./lessons/lesson12/formGender/FormGender";
 import Cat from "./components/cat/Cat";
+import ComponentenPage from "./componentensPage/ComponentenPage";
+import ChangeTitel from "./components/changeTitelDocumentitel/ChangeTitel";
+import FormBeispiel from "./lessons/lesson12/formBeispiel/FormBeispiel";
+import Lesson13 from "./lessons/lesson13/Lesson13";
+import Lesson14 from "./lessons/lesson14/Lesson14";
+import ProductPage from "./components/productPage/ProductPage";
 
 function App() {
   return (
@@ -40,11 +46,18 @@ function App() {
           <Route path="lesson-10" element={<h2>in Entwicklung</h2>} />
           <Route path="lesson-11" element={<Lesson11 />} />
           <Route path="lesson-12" element={<Lesson12 />} />
-          <Route path="form_gender" element={<FormGender />} />
+          <Route path="lesson-13" element={<Lesson13 />} />
+          <Route path="lesson-13" element={<Lesson13 />} />
+          <Route path="lesson-14" element={<Lesson14 />} />
+
+          <Route path="lesson-14/:id" element={<ProductPage />} />
           <Route path="cats" element={<Cat />} />
 
           <Route path="con" element={<ConsultationPage />} />
           <Route path="/consul-5" element={<UsersPage />} />
+
+          <Route path="allcomponent" element={<ComponentenPage />} />
+          <Route path="/changetitle" element={<ChangeTitel />} />
 
           {/* компонент по пути * будет отображаться по всем путям, которые явно не описаны в маршрутизации  */}
           <Route path="*" element={<NoPage />} />

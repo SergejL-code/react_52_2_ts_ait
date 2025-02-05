@@ -24,6 +24,12 @@ function Layout() {
         >
           HomeWork
         </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? styles.linkActive : "")}
+          to={"allcomponent"}
+        >
+          Component
+        </NavLink>
       </header>
       <main className={styles.main}>
         {/* за место компонента Outlet импортированного из React Router будут приходить компоненты из маршрутизации, которую мы описываем в App.tsx */}
