@@ -2,7 +2,6 @@ import styles from "./lesson13.module.css";
 import { useFormik } from "formik";
 import MyButton from "../../components/myButton/MyButton";
 import * as Yup from "yup";
-import { form } from "framer-motion/m";
 
 interface IFormValues {
   model: string;
@@ -24,9 +23,12 @@ const schema = Yup.object().shape({
     .typeError("model is a number")
     .required("model is required")
     .integer("model is integer")
+    .positive("model number > 0")
     .min(100, "model number is more then 100")
     .max(2000, "model number is lets than 2000..."),
-  creator: Yup.string().required("creator is required"),
+  creator: Yup.string()
+    .required("creator is required")
+    .max(5, "name is 5 Buchstaben"),
   email: Yup.string()
     .email("incorrect email format")
     .max(50, "less than 50 symbols,please")
@@ -36,20 +38,31 @@ const schema = Yup.object().shape({
 function Lesson13(): JSX.Element {
   const formik = useFormik({
     initialValues: {
-      model: "1000",
-      creator: "skynet",
-      email: "skynet@gmail.com",
+      model: "",
+      creator: "",
+      email: "",
     } as IFormValues,
+
+    // отключаем валидацию по умолчанию на изменение в input
+    // теперь сообщение об ошибке возникнет только по нажатию на кнопку
+    validateOnChange: false,
+
     //может быть так  validationSchema  ,если  const  называется так же как ключ
+    // подключаем схему валидации к форме
     validationSchema: schema,
-    onSubmit: (values) => {
+    // вторым аргументом получем объект с методами
+    // деструктурируем и получаем resetForm
+
+    onSubmit: (values, { resetForm }) => {
       console.log(values);
+      // метод для очистки формы
+      resetForm();
     },
   });
   return (
     <div className={styles.lessonContainer}>
-      <h2>Lesson13</h2>
-      <form onSubmit={formik.handleSubmit} className="styles.robotForm">
+      <h2>Lesson13: YUP</h2>
+      <form onSubmit={formik.handleSubmit} className={styles.robotForm}>
         <input
           value={formik.values.model}
           onChange={formik.handleChange}

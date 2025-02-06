@@ -1,9 +1,10 @@
-// import styles from './productPge.module.css'
+import styles from "./productPage.module.css";
 
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { IProduct } from "../products/types/types";
 import Loader from "../loader/Loader";
+import { div } from "framer-motion/m";
 
 const initialProduct: IProduct = {
   id: 0,
@@ -32,7 +33,7 @@ function ProductPage(): JSX.Element {
   }, [id]);
 
   return (
-    <div>
+    <div className={styles.productPage}>
       {product.title ? (
         <>
           <h3>{product.title}</h3>
@@ -44,7 +45,9 @@ function ProductPage(): JSX.Element {
           </div>
         </>
       ) : (
-        <Loader />
+        <div className={styles.loaderWrapper}>
+          <Loader />
+        </div>
       )}
     </div>
   );

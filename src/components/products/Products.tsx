@@ -3,7 +3,15 @@ import styles from "./products.module.css";
 import { IProduct } from "./types/types";
 import ProductCard from "../productCard/ProductCard";
 
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
+import Cart from "../cart/Cart";
+
 function Products(): JSX.Element {
+  // вызываем функцию получения данных из контекста корзины
+  // в ответе через деструктуризацию получаем нужные данные
+  const { addToCart } = useCart();
+
   const [products, setProducts] = useState<IProduct[]>([]);
 
   const getProducts = async () => {
@@ -17,17 +25,41 @@ function Products(): JSX.Element {
   }, []);
 
   return (
-    <div className={styles.shopContainer}>
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          id={product.id}
-          title={product.title}
-          image={product.image}
-          price={product.price}
-        />
-      ))}
-    </div>
+    <>
+      <Cart />
+      <div className={styles.shopContainer}>
+        {products.map((product) => (
+          <div key={product.id}>
+            <ProductCard
+              id={product.id}
+              title={product.title}
+              image={product.image}
+              price={product.price}
+            />
+            {/* <div>
+              <button>
+                <Link key={product.id} to={String(product.id)}>
+                  to product
+                </Link>
+              </button>
+            </div>
+
+            <button
+              onClick={() =>
+                addToCart({
+                  id: product.id,
+                  title: product.title,
+                  price: product.price,
+                  quantity: 1,
+                })
+              }
+            >
+              add to cart
+            </button> */}
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 export default Products;

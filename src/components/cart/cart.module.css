@@ -1,0 +1,9 @@
+.cartContainer {
+  margin-bottom: 20px;
+}
+.cartContainer > div {
+  border-bottom: 1px solid white;
+}
+.cartContainer > div:last-child {
+  border-bottom: none;
+}
