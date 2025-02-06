@@ -1,0 +1,4 @@
+.lessonContainer {
+  display: flex;
+  flex-direction: column;
+}
