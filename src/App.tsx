@@ -29,64 +29,68 @@ import Lesson17 from "./lessons/lesson17/Lesson17";
 import Lesson16 from "./lessons/lesson16/Lesson16";
 import Store from "./components/store/Store";
 import StorePage from "./components/storePage/StorePage";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 function App(): JSX.Element {
   return (
-    <CartProvider>
-      <HashRouter>
-        {/* импортируем компонент Routes (пути) вокруг всех компонентов приложения */}
-        <Routes>
-          {/* В обертке Route (один путь) - передаем пропсами: element - компонент назначаемый на путь, path - путь до компонента */}
-          <Route path="/" element={<Layout />}>
-            {/* компоненты ниже придут в Layout на место Outlet */}
-            {/* path - это путь до компонента */}
-            {/* это же значение 'path' мы используем в навигационных элементах Link в пропсе 'to', чтобы они работали, как ссылка на компонент */}
-            <Route path="/" element={<HomePage />} />
+    <Provider store={store}>
+      <CartProvider>
+        <HashRouter>
+          {/* импортируем компонент Routes (пути) вокруг всех компонентов приложения */}
+          <Routes>
+            {/* В обертке Route (один путь) - передаем пропсами: element - компонент назначаемый на путь, path - путь до компонента */}
+            <Route path="/" element={<Layout />}>
+              {/* компоненты ниже придут в Layout на место Outlet */}
+              {/* path - это путь до компонента */}
+              {/* это же значение 'path' мы используем в навигационных элементах Link в пропсе 'to', чтобы они работали, как ссылка на компонент */}
+              <Route path="/" element={<HomePage />} />
 
-            <Route path="products" element={<Products />} />
-            <Route path="products/:id" element={<ProductPage />} />
-            <Route path="cart" element={<Cart />} />
+              <Route path="products" element={<Products />} />
+              <Route path="products/:id" element={<ProductPage />} />
+              <Route path="cart" element={<Cart />} />
 
-            <Route path="store" element={<Store />} />
-            <Route path="store/:id/" element={<StorePage />} />
+              <Route path="store" element={<Store />} />
+              <Route path="store/:id/" element={<StorePage />} />
 
-            <Route path="lesson-1" element={<h2>in Entwicklung</h2>} />
-            <Route path="lesson-2" element={<h2>in Entwicklung</h2>} />
-            <Route path="lesson-3" element={<h2>in Entwicklung</h2>} />
-            <Route path="lesson-4" element={<Lesson04 />} />
-            <Route path="lesson-5" element={<Lesson05 />} />
-            <Route path="lesson-6" element={<UsersPage />} />
-            <Route path="lesson-7" element={<h2>in Entwicklung</h2>} />
-            <Route path="lesson-8" element={<h2>in Entwicklung</h2>} />
-            <Route path="lesson-9" element={<h2>in Entwicklung</h2>} />
-            <Route
-              path="lesson-10"
-              element={<h2>Lesson 10. react practice ⚡️</h2>}
-            />
-            <Route path="lesson-11" element={<Lesson11 />} />
-            <Route path="lesson-12" element={<Lesson12 />} />
-            <Route path="lesson-13" element={<Lesson13 />} />
-            <Route path="lesson-13" element={<Lesson13 />} />
-            <Route path="lesson-14" element={<Lesson14 />} />
-            <Route path="lesson-14/:id" element={<ProductPage />} />
-            <Route path="lesson-15" element={<Lesson15 />} />
-            <Route path="lesson-16" element={<Lesson16 />} />
-            <Route path="lesson-17" element={<Lesson17 />} />
+              <Route path="lesson-1" element={<h2>in Entwicklung</h2>} />
+              <Route path="lesson-2" element={<h2>in Entwicklung</h2>} />
+              <Route path="lesson-3" element={<h2>in Entwicklung</h2>} />
+              <Route path="lesson-4" element={<Lesson04 />} />
+              <Route path="lesson-5" element={<Lesson05 />} />
+              <Route path="lesson-6" element={<UsersPage />} />
+              <Route path="lesson-7" element={<h2>in Entwicklung</h2>} />
+              <Route path="lesson-8" element={<h2>in Entwicklung</h2>} />
+              <Route path="lesson-9" element={<h2>in Entwicklung</h2>} />
+              <Route
+                path="lesson-10"
+                element={<h2>Lesson 10. react practice ⚡️</h2>}
+              />
+              <Route path="lesson-11" element={<Lesson11 />} />
+              <Route path="lesson-12" element={<Lesson12 />} />
+              <Route path="lesson-13" element={<Lesson13 />} />
+              <Route path="lesson-13" element={<Lesson13 />} />
+              <Route path="lesson-14" element={<Lesson14 />} />
+              <Route path="lesson-14/:id" element={<ProductPage />} />
+              <Route path="lesson-15" element={<Lesson15 />} />
+              <Route path="lesson-16" element={<Lesson16 />} />
+              <Route path="lesson-17" element={<Lesson17 />} />
 
-            <Route path="cats" element={<Cat />} />
+              <Route path="cats" element={<Cat />} />
 
-            <Route path="con" element={<ConsultationPage />} />
-            <Route path="/consul-5" element={<UsersPage />} />
+              <Route path="con" element={<ConsultationPage />} />
+              <Route path="/consul-5" element={<UsersPage />} />
 
-            <Route path="allcomponent" element={<ComponentenPage />} />
-            <Route path="/changetitle" element={<ChangeTitel />} />
+              <Route path="allcomponent" element={<ComponentenPage />} />
+              <Route path="/changetitle" element={<ChangeTitel />} />
 
-            {/* компонент по пути * будет отображаться по всем путям, которые явно не описаны в маршрутизации  */}
-            <Route path="*" element={<NoPage />} />
-          </Route>
-        </Routes>
-      </HashRouter>
-    </CartProvider>
+              {/* компонент по пути * будет отображаться по всем путям, которые явно не описаны в маршрутизации  */}
+              <Route path="*" element={<NoPage />} />
+            </Route>
+          </Routes>
+        </HashRouter>
+      </CartProvider>{" "}
+    </Provider>
   );
 }
 // оборачиваем все приложение в компонент HashRouter из библиотеки React Router

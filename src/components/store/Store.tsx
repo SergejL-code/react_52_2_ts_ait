@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import StoreCard from "../storeCard/StoreCard";
 import styles from "./store.module.css";
 import Loader from "../loader/Loader";
-import Cart2 from "../cart/cart2";
+import Cart2 from "../cart/Cart2";
 
 export interface IStore {
   id: number;
