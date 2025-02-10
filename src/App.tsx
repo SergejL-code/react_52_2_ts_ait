@@ -25,7 +25,10 @@ import Lesson15 from "./lessons/lesson15/Lesson15";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./components/cart/Cart";
 import Products from "./components/products/Products";
-import Lesson16 from "./lessons/lesson16/lesson16";
+import Lesson17 from "./lessons/lesson17/Lesson17";
+import Lesson16 from "./lessons/lesson16/Lesson16";
+import Store from "./components/store/Store";
+import StorePage from "./components/storePage/StorePage";
 
 function App(): JSX.Element {
   return (
@@ -43,6 +46,9 @@ function App(): JSX.Element {
             <Route path="products" element={<Products />} />
             <Route path="products/:id" element={<ProductPage />} />
             <Route path="cart" element={<Cart />} />
+
+            <Route path="store" element={<Store />} />
+            <Route path="store/:id/" element={<StorePage />} />
 
             <Route path="lesson-1" element={<h2>in Entwicklung</h2>} />
             <Route path="lesson-2" element={<h2>in Entwicklung</h2>} />
@@ -65,6 +71,7 @@ function App(): JSX.Element {
             <Route path="lesson-14/:id" element={<ProductPage />} />
             <Route path="lesson-15" element={<Lesson15 />} />
             <Route path="lesson-16" element={<Lesson16 />} />
+            <Route path="lesson-17" element={<Lesson17 />} />
 
             <Route path="cats" element={<Cat />} />
 

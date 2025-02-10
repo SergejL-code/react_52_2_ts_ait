@@ -52,6 +52,9 @@ function HomePage() {
       <Link to="lesson-16">
         <div>Lesson 16</div>
       </Link>
+      <Link to="lesson-17">
+        <div>Lesson 17</div>
+      </Link>
       <Link to="form_gender">
         <div>Gender</div>
       </Link>

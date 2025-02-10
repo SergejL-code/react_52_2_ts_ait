@@ -1,9 +1,147 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .cartContainer {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 440px;
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: rgb(0, 0, 0);
 }
-.cartContainer > div {
-  border-bottom: 1px solid white;
+
+.cartContainer > h2 {
+  color: #c2c6c9;
 }
-.cartContainer > div:last-child {
-  border-bottom: none;
+
+.cartContainer > button:hover {
+  color: #c2c6c9 !important;
+}
+
+.cartContainer > h2 {
+  margin-bottom: 0;
+}
+
+.totalPriceDiv > h3,
+p {
+  color: #c2c6c9;
+}
+
+.totalPriceDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.scrollWrapper {
+  height: 160px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  scrollbar-gutter: stable; /* Reserves space for scrollbar */
+}
+
+.productsContainer {
+  display: block;
+  width: 100%;
+}
+
+.itemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+  gap: 10px;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.imageWrapper {
+  height: 40px;
+  flex: 0 0 40px;
+}
+
+.imageWrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nameQuantContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.pWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.pWrapper > p {
+  margin: 0;
+  color: #c2c6c9;
+}
+
+.pTitle {
+  font-size: medium;
+}
+
+.quantityWrapper {
+  display: flex;
+}
+
+.quantityWrapper {
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantityWrapper > button {
+  padding: 0;
+  background-color: transparent;
+  min-width: 20px;
+  color: #c2c6c9;
+}
+
+.quantityWrapper > p {
+  color: #c2c6c9;
+}
+
+.pQuantity {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-weight: 600;
+  width: 40px;
+}
+
+.priceDelContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+  min-width: 100px;
+}
+
+.priceDelContainer > p {
+  text-align: right;
+}
+
+.priceDelContainer > button {
+  padding: 0;
+  background-color: transparent;
 }
