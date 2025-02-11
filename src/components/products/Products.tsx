@@ -3,11 +3,19 @@ import styles from "./products.module.css";
 import { IProduct } from "./types/types";
 import ProductCard from "../productCard/ProductCard";
 
-import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import Cart from "../cart/Cart";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { loadProducts } from "../../features/products/productsActions";
 
 function Products(): JSX.Element {
+  const {
+    products: reduxProducts,
+    error,
+    isLoading,
+  } = useAppSelector((state) => state.products);
+
+  const dispatch = useAppDispatch();
   // вызываем функцию получения данных из контекста корзины
   // в ответе через деструктуризацию получаем нужные данные
   const { addToCart } = useCart();
@@ -21,14 +29,15 @@ function Products(): JSX.Element {
     setProducts(data);
   };
   useEffect(() => {
-    getProducts();
+    // getProducts()
+    dispatch(loadProducts());
   }, []);
 
   return (
     <>
       <Cart />
       <div className={styles.shopContainer}>
-        {products.map((product) => (
+        {reduxProducts.map((product) => (
           <div key={product.id}>
             <ProductCard
               id={product.id}

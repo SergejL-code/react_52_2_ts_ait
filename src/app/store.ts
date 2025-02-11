@@ -1,5 +1,6 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import productsSlice from "../features/products/productsSlice";
+import authSlice from "../features/auth/authSlice";
 // import counterReducer from "../features/counter/counterSlice"
 
 // import { itemsSlice } from '../features/shopFeature/shopSlice'
@@ -14,7 +15,7 @@ export const store = configureStore({
     // подключаем функции reducer для обработки данных из файлов slice
     products: productsSlice.reducer,
     // shop: itemsSlice.reducer,
-    // user: authSlice.reducer,
+    auth: authSlice.reducer,
     // здесь могли бы быть ваши редьюсеры
   },
 });

@@ -14,7 +14,10 @@ function HomePage() {
         <div>Lesson 03</div>
       </Link>
       <Link to="lesson-4">
-        <div>Lesson 04</div>
+        <div className="lessonWithText">
+          Lesson 04 :
+          <span className="lessonDescription"> hook useState()🪝 </span>
+        </div>
       </Link>
       <Link to="lesson-5">
         <div>Lesson 05</div>

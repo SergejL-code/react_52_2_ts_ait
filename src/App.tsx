@@ -31,6 +31,7 @@ import Store from "./components/store/Store";
 import StorePage from "./components/storePage/StorePage";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
+import Login from "./features/auth/login/Login";
 
 function App(): JSX.Element {
   return (
@@ -83,7 +84,7 @@ function App(): JSX.Element {
 
               <Route path="allcomponent" element={<ComponentenPage />} />
               <Route path="/changetitle" element={<ChangeTitel />} />
-
+              <Route path="login" element={<Login />} />
               {/* компонент по пути * будет отображаться по всем путям, которые явно не описаны в маршрутизации  */}
               <Route path="*" element={<NoPage />} />
             </Route>

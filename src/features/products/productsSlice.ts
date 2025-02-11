@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IProductState } from "./types";
-import { loadProducts } from "./productsActions";
+import { loadLimitProduct, loadProducts } from "./productsActions";
 // * создаем начальный объект-состояние для slice
 const initialState: IProductState = {
   // ключ с самими данными
@@ -30,6 +30,18 @@ export const productSlice = createSlice({
         state.products = action.payload;
       })
       .addCase(loadProducts.rejected, (state, action) => {
+        state.isLoading = false;
+        state.products = [];
+        state.error = action.payload as string;
+      })
+      .addCase(loadLimitProduct.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(loadLimitProduct.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.products = action.payload;
+      })
+      .addCase(loadLimitProduct.rejected, (state, action) => {
         state.isLoading = false;
         state.products = [];
         state.error = action.payload as string;

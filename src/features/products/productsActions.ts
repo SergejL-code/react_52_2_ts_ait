@@ -18,3 +18,26 @@ export const loadProducts = createAsyncThunk(
     }
   }
 );
+
+export const loadLimitProduct = createAsyncThunk(
+  "productsActions",
+  async (limit: string, thunkAPI) => {
+    try {
+      const response = await axios.get(
+        `https://fakestoreapi.com/products?limit=${limit}`
+      );
+      return response.data;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// export const fetchData = createAsyncThunk(
+//   "data/fetchData",
+//   async (count: number) => {
+//     const response = await fetch(`https://api.example.com/data?limit=${count}`);
+//     return await response.json();
+//   }
+// );

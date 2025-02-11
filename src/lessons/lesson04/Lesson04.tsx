@@ -37,7 +37,7 @@ export default function Lesson04(): JSX.Element {
 
   return (
     <div>
-      <h2>React useState() hook 🪝</h2>
+      <h2>React: useState() hook 🪝</h2>
       <div className="counter">
         <button onClick={handleMinus}>-</button>
         <span>{count}</span>
